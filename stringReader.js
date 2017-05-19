@@ -1,4 +1,14 @@
-var theString="Give[]{{}}[{}([])[]] me a String but with parentesis ans stuff"
+var theString="Give {{{[]{[()]}me a String but with parentesis ans stuff"
+
+/*
+{{{[]{[()]} no
+[[[[]]])] no
+()()()[)(]) no
+([{{}}[({}{})]])() yes
+[()]{}{[()()]()} yes
+[(]) no
+[()]{}{[()()]()} yes
+*/
 
 console.log(theString)
 var stringArray=theString.split("");//divide string in an array with each of the individual characters
@@ -19,15 +29,15 @@ for(var i=0; i<stringArray.length; i++){ //pushing opening braces to left array
 		arrayLeftSize++
 	}
 	//poping previous brace if current character was closing it
-	else if (stringArray[i]===")" && stringArray[i-1]==="(" ){
+	else if (stringArray[i]===")" && smallArrayLeft[arrayLeftSize-1]==="(" ){
+		smallArrayLeft.pop()
+		arrayLeftSize--
+	}
+	else if (stringArray[i]==="]" && smallArrayLeft[arrayLeftSize-1]==="[" ){
 		smallArrayLeft.pop(stringArray[i-1])
 		arrayLeftSize--
 	}
-	else if (stringArray[i]==="]" && stringArray[i-1]==="[" ){
-		smallArrayLeft.pop(stringArray[i-1])
-		arrayLeftSize--
-	}
-	else if (stringArray[i]==="}" && stringArray[i-1]==="{" ){
+	else if (stringArray[i]==="}" && smallArrayLeft[arrayLeftSize-1]==="{" ){
 		smallArrayLeft.pop(stringArray[i-1])
 		arrayLeftSize--
 	}
@@ -38,13 +48,6 @@ for(var i=0; i<stringArray.length; i++){ //pushing opening braces to left array
 	}
 }
 
-if(arrayLeftSize!==0&&arrayRightSize!==0){//continue if not all closed inmediatly
-	console.log("there is still stuff to do")
-	//smallArrayRight.reverse()
-	for(var i=arrayLeftSize; i>0;i--){
-
-	}
-}
 
 //checking if non inmediate braces are in correct position
 console.log(arrayLeftSize)
@@ -52,3 +55,8 @@ console.log(arrayRightSize)
 
 console.log(smallArrayLeft)
 console.log(smallArrayRight)
+
+if(arrayLeftSize!==0||arrayRightSize!==0){
+	console.log("that string contains incorrect brackets")
+}
+else console.log("those brackets are correctly placed")
