@@ -46,3 +46,20 @@ console.log(14%3); //prints 2 divides 14 by 3
 
 //substrings
 //From 4th to 6th letter of "laptop" "laptop".substring(3,6);
+//printing burguer
+console.log("Hamburgers".substring(3,"Hamburgers".length));
+//saving a variable var
+ myAge=33;
+ var myCountry=("Mexico wey");
+ console.log(myCountry.length);//printing the variable
+ console.log(myCountry.substring(0,3));//printing a substring of the first three letters of my myCountry
+
+ // On line 2, declare a variable myName and give it your name.
+var myName="Eric"
+// On line 4, use console.log to print out the myName variable.
+console.log(myName)
+// On line 7, change the value of myName to be just the first 2 
+// letters of your name.
+myName=myName.substring(0,2)
+// On line 9, use console.log to print out the myName variable.
+console.log(myName)
