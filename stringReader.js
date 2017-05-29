@@ -1,4 +1,4 @@
-var theString="Give {{{[]{[()]}me a String but with parentesis ans stuff"
+var theString="Give ([{{}}[({}{})]])()me a [()]{}{[()()]()} yes St[(]) ringbut wi[()]{}{[()()]()}th parentesis ans stuff"
 
 /*
 {{{[]{[()]} no
@@ -34,18 +34,21 @@ for(var i=0; i<stringArray.length; i++){ //pushing opening braces to left array
 		arrayLeftSize--
 	}
 	else if (stringArray[i]==="]" && smallArrayLeft[arrayLeftSize-1]==="[" ){
-		smallArrayLeft.pop(stringArray[i-1])
+		smallArrayLeft.pop()
 		arrayLeftSize--
 	}
 	else if (stringArray[i]==="}" && smallArrayLeft[arrayLeftSize-1]==="{" ){
-		smallArrayLeft.pop(stringArray[i-1])
+		smallArrayLeft.pop()
 		arrayLeftSize--
 	}
+
+	
 	//pushing noninmediate closing braces to right array
 	else if (stringArray[i]===")" || stringArray[i]==="]" || stringArray[i]==="}" ){
 		smallArrayRight.push(stringArray[i])
 		arrayRightSize++
 	}
+	
 }
 
 

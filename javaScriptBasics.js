@@ -63,3 +63,17 @@ console.log(myName)
 myName=myName.substring(0,2)
 // On line 9, use console.log to print out the myName variable.
 console.log(myName)
+
+
+ /*//example on traversing dictionaries
+var brothers = {
+  "juan":30,
+  "nora":28,
+  "yael":42
+};
+//brothers.push(eric,22)//pushing like this is wrong for dictionary
+brothers["eric"]=22;//correct
+for(var index in brothers){
+  console.log(brothers[index])
+}
+*/
