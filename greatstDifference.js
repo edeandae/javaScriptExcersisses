@@ -17,7 +17,7 @@ function maxDifference(numbers){
 		}
 	}
 
-	console.log(greatest-smallest)
+	console.log(greatest-smallest);
 };
 
 maxDifference(numbers);

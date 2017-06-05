@@ -7,6 +7,15 @@ Example:
 'gggaaa' -> 'gaaag' or 'aggga' 
 Note if there are multiple correct answers you only need to return 1 palindrome.
 */
+
+//tests
+dictionaryCreator(word)
+console.log(wordDict)
+palindromeConstructor(wordDict)
+console.log(wordDict)
+console.log(palindrome)
+console.log(rigthPalindrome)
+
 var word = "aabczRc";
 var wordDict = {};
 var leftPalindrome = [];
@@ -25,14 +34,6 @@ function dictionaryCreator(word){
   }
 };
 
-dictionaryCreator(word)
-console.log(wordDict)
-palindromeConstructor(wordDict)
-console.log(wordDict)
-console.log(palindrome)
-console.log(rigthPalindrome)
-
-
 function palindromeConstructor (wordDict){
 	for(var index in wordDict) {
 		for(var i=wordDict[index]; i>1;i-=2){
@@ -43,14 +44,14 @@ function palindromeConstructor (wordDict){
 	}
 	for(var index in wordDict){
 		if(wordDict[index]===1){
-			leftPalindrome.push(index)
-			break
+			leftPalindrome.push(index);
+			break;
 		}
 	}
 	rigthPalindrome.reverse();
 	for(var index in rigthPalindrome){
-		leftPalindrome.push(rigthPalindrome[index])
+		leftPalindrome.push(rigthPalindrome[index]);
 	}
 	palindrome = leftPalindrome.join(',');
-	console.log(palindrome)
+	console.log(palindrome);
 };
