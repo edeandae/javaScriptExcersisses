@@ -8,14 +8,6 @@ Example:
 Note if there are multiple correct answers you only need to return 1 palindrome.
 */
 
-//tests
-dictionaryCreator(word)
-console.log(wordDict)
-palindromeConstructor(wordDict)
-console.log(wordDict)
-console.log(palindrome)
-console.log(rigthPalindrome)
-
 var word = "aabczRc";
 var wordDict = {};
 var leftPalindrome = [];
@@ -55,3 +47,11 @@ function palindromeConstructor (wordDict){
 	palindrome = leftPalindrome.join(',');
 	console.log(palindrome);
 };
+
+//tests
+dictionaryCreator(word);
+console.log(wordDict);
+palindromeConstructor(wordDict);
+console.log(wordDict);
+console.log(palindrome);
+console.log(rigthPalindrome);

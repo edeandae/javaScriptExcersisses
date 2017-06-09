@@ -60,3 +60,4 @@ if(arrayLeftSize!==0||arrayRightSize!==0){
 	console.log("that string contains incorrect brackets")
 }
 else console.log("those brackets are correctly placed")
+	

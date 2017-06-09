@@ -30,14 +30,12 @@ Semester: Fall
 "CS111 fall 14"
 "CS111 F2014"
 **/
-//string.split(separator, limit)
+
 var string = "CS-:111 2016 Fall";
 array=string.split("");
-depChunk=string.split(" ",1);
-depChunk=depChunk[0].split("");
-//console.log(depChunk)
-
-var place;
+departmentStringChunk=string.split(" ",1);
+departmentStringChunk=departmentStringChunk[0].split(""); //array that includes the characters of department
+var notDepartmentChunk=[];
 
 var numericals=[];
 var chunks=string.split(" ");
@@ -56,13 +54,12 @@ var year;
 //var course = string.split(" ",1)
 //console.log(course)
 
-for(var i=0; i< depChunk.length;i++){
-	if(isNaN(depChunk[i])&&depChunk[i]!==":"&&depChunk[i]!=="-"){
-		departmentArray.push(depChunk[i]);
-		//console.log(array[i])
-		
+for(var i=0; i< departmentStringChunk.length;i++){
+	if(isNaN(departmentStringChunk[i])&&departmentStringChunk[i]!==":"&&departmentStringChunk[i]!=="-"){
+		departmentArray.push(departmentStringChunk[i]);
 	}
 }
+
 for(var i=0; i<array.length;i++){
 	if(isNaN(array[i])===false){
 		numericals.push(array[i]);
@@ -78,22 +75,19 @@ for(var i=0;i<numericals.length;i++){
 	}
 }
 
-var notDepartment=[]
 for(var i=1;i<chunks.length;i++ ){
-	notDepartment.push(chunks[i]);
+	notDepartmentChunk.push(chunks[i]);
 }
 
-var notDepartmentString=notDepartment.join("")
-//console.log(notDepartmentString)
+var notDepartmentString=notDepartmentChunk.join("")
 var semArray=notDepartmentString.split("");
-//console.log(semArray)
 
 for(var i=0; i< semArray.length;i++){
 	if(semArray[i]===" "||isNaN(semArray[i])){
 		semesterArray.push(semArray[i]);
 	}
 }
-//console.log("semesterArray ", semesterArray)
+
 semester=semesterArray.join("");
 console.log("semester ",semester);
 
