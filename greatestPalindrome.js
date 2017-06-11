@@ -31,16 +31,21 @@ function palindromeConstructor (wordDict){
 		for(var i=wordDict[index]; i>1;i-=2){
 			wordDict[index] = wordDict[index]-2;
 			leftPalindrome.push(index);
-			rigthPalindrome.push(index);
 		}
 	}
+	var k=0;
+	for(var i=leftPalindrome.length-1; i>=0;i--){
+		rigthPalindrome[i]=leftPalindrome[k];
+		k++;
+	}
+
 	for(var index in wordDict){
 		if(wordDict[index]===1){
 			leftPalindrome.push(index);
 			break;
 		}
 	}
-	rigthPalindrome.reverse();
+
 	for(var index in rigthPalindrome){
 		leftPalindrome.push(rigthPalindrome[index]);
 	}
